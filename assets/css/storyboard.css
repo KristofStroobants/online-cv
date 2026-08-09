@@ -29,6 +29,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 a {
   color: var(--ink);
   text-decoration: underline;
@@ -261,22 +265,22 @@ button {
 }
 
 .frame {
-  width: 310px;
-  min-width: 310px;
+  width: 320px;
+  min-width: 320px;
   border: 3px solid var(--line);
   background: var(--card-bg);
   box-shadow: var(--shadow);
-  padding: 16px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   transform: rotate(var(--r, 0deg));
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   position: relative;
 }
 
-.frame:hover, .frame.selected {
-  transform: rotate(0deg) translateY(-10px);
+.frame:hover {
+  transform: rotate(0deg) translateY(-10px) scale(1.02);
   box-shadow: var(--shadow-lg);
   border-color: var(--ink);
   z-index: 10;
@@ -307,10 +311,21 @@ button {
   border: 2px solid var(--line);
   padding: 16px;
   margin-bottom: 14px;
-  border-radius: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+.visual-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 9px;
+  font-family: "Archivo Black", sans-serif;
+  padding: 2px 6px;
 }
 
 .frame.summary .visual {
@@ -378,7 +393,7 @@ button {
 }
 
 .frame-footer {
-  margin-top: 14px;
+  margin-top: 16px;
   padding-top: 10px;
   border-top: 2px dashed var(--line);
   font-size: 10px;
@@ -389,9 +404,109 @@ button {
   align-items: center;
 }
 
+.expand-hint {
+  background: var(--yellow);
+  border: 1.5px solid var(--line);
+  padding: 2px 6px;
+  font-size: 9px;
+  font-family: "Archivo Black", sans-serif;
+}
+
+/* Enlarged / Modal Overlay View */
+.backdrop-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 24, 20, 0.7);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 500;
+}
+
+.backdrop-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* When a card is expanded */
+.frame.expanded {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  width: min(680px, 92vw) !important;
+  max-height: 88vh !important;
+  overflow-y: auto !important;
+  z-index: 600 !important;
+  box-shadow: 16px 16px 0 var(--ink) !important;
+  border: 4px solid var(--ink) !important;
+  background: var(--card-bg) !important;
+  padding: 28px !important;
+  cursor: default !important;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -46%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.frame.expanded .visual {
+  padding: 24px;
+}
+
+.frame.expanded .visual-title {
+  font-size: 26px;
+}
+
+.frame.expanded .visual-subtitle {
+  font-size: 13px;
+}
+
+.frame.expanded .frame-body {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.frame.expanded .frame-body ul li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.frame.expanded .frame-body ul li::before {
+  font-size: 10px;
+}
+
+.frame-close-btn {
+  display: none;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  padding: 6px 14px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 11px;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+}
+
+.frame.expanded .frame-close-btn {
+  display: inline-block;
+}
+
+.frame.expanded .expand-hint {
+  display: none;
+}
+
 /* Brutalist Skill Bar */
 .neo-skill-bar {
-  height: 12px;
+  height: 14px;
   background: #ffffff;
   border: 2px solid var(--line);
   margin-top: 6px;
@@ -482,7 +597,7 @@ button {
 }
 
 @media print {
-  .top, .palette, .drag {
+  .top, .palette, .drag, .backdrop-overlay, .frame-close-btn {
     display: none !important;
   }
   .work {
@@ -501,5 +616,6 @@ button {
     page-break-inside: avoid;
     transform: none !important;
     box-shadow: none !important;
+    position: static !important;
   }
 }

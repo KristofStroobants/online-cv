@@ -30,7 +30,7 @@ layout: compress
             <section class="canvas">
                 <div class="canvas-header">
                     <h1>ARRANGE &amp; EXPLORE THE DAY</h1>
-                    <p class="canvas-sub">Contact sheet storyboards. Drag cards horizontally to reorder or click a scene to inspect.</p>
+                    <p class="canvas-sub">Contact sheet storyboards. Click any card to enlarge it, or drag cards horizontally to reorder.</p>
                 </div>
 
                 <div class="frames-container" id="frames">
@@ -47,9 +47,12 @@ layout: compress
             <button class="palette-btn" data-filter="skill">SKILLS</button>
             <button class="palette-btn" data-filter="project">PROJECTS</button>
             <button class="palette-btn" data-filter="education">BACKGROUND</button>
-            <span class="palette-counter" id="counter">7 SCENES · DRAG TO REORDER</span>
+            <span class="palette-counter" id="counter">6 SCENES · CLICK TO ENLARGE</span>
         </footer>
     </div>
+
+    <!-- Backdrop Overlay for Enlarged Cards -->
+    <div class="backdrop-overlay" id="backdrop"></div>
 
     {% include scripts.html %}
 </body>

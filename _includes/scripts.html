@@ -3,6 +3,29 @@ document.addEventListener("DOMContentLoaded", function() {
     var framesContainer = document.querySelector("#frames");
     var paletteButtons = document.querySelectorAll(".palette-btn");
     var counterEl = document.querySelector("#counter");
+    var backdrop = document.querySelector("#backdrop");
+
+    // Close enlarged card function
+    function closeExpandedCard() {
+        var expanded = document.querySelector(".frame.expanded");
+        if (expanded) {
+            expanded.classList.remove("expanded");
+        }
+        if (backdrop) {
+            backdrop.classList.remove("active");
+        }
+        document.body.classList.remove("modal-open");
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener("click", closeExpandedCard);
+    }
+
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") {
+            closeExpandedCard();
+        }
+    });
 
     // Category Filtering
     paletteButtons.forEach(function(btn) {
@@ -25,16 +48,39 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             if (counterEl) {
-                counterEl.textContent = visibleCount + " SCENES · " + (filter === "all" ? "DRAG TO REORDER" : "FILTERED BY " + filter.toUpperCase());
+                counterEl.textContent = visibleCount + " SCENES · " + (filter === "all" ? "CLICK TO ENLARGE" : "FILTERED BY " + filter.toUpperCase());
             }
         });
     });
 
-    // Drag and drop reordering & selection
+    // Enlarge card on click & Drag-and-drop reordering
     var dragFrame = null;
 
-    function initDragEvents(frame) {
+    function initFrameEvents(frame) {
+        // Enlarge on card click (unless clicking a link or close button)
+        frame.addEventListener("click", function(e) {
+            if (e.target.closest("a")) return; // Let links be clicked normally
+            
+            if (e.target.closest(".frame-close-btn")) {
+                e.stopPropagation();
+                closeExpandedCard();
+                return;
+            }
+
+            if (!frame.classList.contains("expanded")) {
+                closeExpandedCard(); // Close any previously open card
+                frame.classList.add("expanded");
+                if (backdrop) backdrop.classList.add("active");
+                document.body.classList.add("modal-open");
+            }
+        });
+
+        // Drag events
         frame.addEventListener("dragstart", function(e) {
+            if (frame.classList.contains("expanded")) {
+                e.preventDefault();
+                return;
+            }
             dragFrame = frame;
             frame.classList.add("dragging");
             e.dataTransfer.effectAllowed = "move";
@@ -47,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         frame.addEventListener("drop", function(e) {
             e.preventDefault();
-            if (dragFrame && dragFrame !== frame) {
+            if (dragFrame && dragFrame !== frame && !frame.classList.contains("expanded")) {
                 var allFrames = Array.from(framesContainer.children);
                 var dragIdx = allFrames.indexOf(dragFrame);
                 var dropIdx = allFrames.indexOf(frame);
@@ -66,13 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 dragFrame = null;
             }
         });
-
-        frame.addEventListener("click", function() {
-            document.querySelectorAll(".frame").forEach(function(f) { f.classList.remove("selected"); });
-            frame.classList.add("selected");
-        });
     }
 
-    document.querySelectorAll(".frame").forEach(initDragEvents);
+    document.querySelectorAll(".frame").forEach(initFrameEvents);
 });
 </script>
