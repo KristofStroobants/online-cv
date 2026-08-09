@@ -392,6 +392,24 @@ button {
   color: var(--coral);
 }
 
+/* Scrollable Project List Styling */
+.projects-scroll-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.projects-scroll-list::-webkit-scrollbar-track {
+  background: var(--cream);
+  border: 1px solid var(--line);
+}
+
+.projects-scroll-list::-webkit-scrollbar-thumb {
+  background: var(--ink);
+}
+
+.frame.expanded .projects-scroll-list {
+  max-height: 480px !important;
+}
+
 .frame-footer {
   margin-top: 16px;
   padding-top: 10px;
@@ -477,7 +495,7 @@ button {
 
 .frame.expanded .frame-body ul li {
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   padding-left: 20px;
 }
 
