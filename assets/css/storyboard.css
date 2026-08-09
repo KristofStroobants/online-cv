@@ -188,13 +188,6 @@ button {
   margin: 10px 0 16px;
 }
 
-.info-tagline {
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 24px;
-  line-height: 1.4;
-}
-
 .fields {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -219,21 +212,20 @@ button {
 }
 
 .info-bio {
-  font-size: 12px;
-.info-bio {
   font-size: 13px;
   line-height: 1.7;
   border: 2px solid var(--line);
-  background: var(--card-bg);
+  background: #fffdf5;
   padding: 16px;
   margin-top: 16px;
   box-shadow: 3px 3px 0 var(--line);
+  color: var(--ink);
 }
 
 .info-bio strong {
   font-weight: 600;
   background: var(--yellow);
-  padding: 1px 4px;
+  padding: 1px 5px;
   border: 1px solid var(--line);
 }
 
