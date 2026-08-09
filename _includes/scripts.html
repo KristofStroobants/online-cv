@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var dragFrame = null;
 
     function initFrameEvents(frame) {
-        // Enlarge on card click (unless clicking a link or close button)
+        // Enlarge on card click (only for project card)
         frame.addEventListener("click", function(e) {
             if (e.target.closest("a")) return; // Let links be clicked normally
             
@@ -66,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 closeExpandedCard();
                 return;
             }
+
+            if (!frame.classList.contains("project")) return; // Only projects enlarge
 
             if (!frame.classList.contains("expanded")) {
                 closeExpandedCard(); // Close any previously open card
