@@ -1,0 +1,829 @@
+---
+layout: default
+title: Engineering Projects & Open Source Showcase
+permalink: /projects.html
+---
+
+<div class="projects-page-wrapper">
+    <!-- Hero Banner -->
+    <div class="projects-hero">
+        <div class="projects-hero-badge">
+            🚀 OPEN SOURCE &amp; POWERSHELL SHOWCASE
+        </div>
+        <h1 class="projects-hero-title">
+            AUTOMATION, <span class="highlight">SECURITY &amp; CLOUD</span> TOOLS FOR ENTERPRISE.
+        </h1>
+        <p class="projects-hero-sub">
+            Explore 15 custom PowerShell utilities, SCCM deployment GUIs, Active Directory security audit scripts, and Windows kernel performance guides authored by Kristof Stroobants.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="projects-stats-grid">
+            <div class="projects-stat-card">
+                <div class="projects-stat-val" style="color: var(--coral);">15+</div>
+                <div class="projects-stat-lbl">Open-Source Tools &amp; Guides</div>
+            </div>
+            <div class="projects-stat-card">
+                <div class="projects-stat-val" style="color: var(--blue);">10+ YRS</div>
+                <div class="projects-stat-lbl">PowerShell &amp; Automation</div>
+            </div>
+            <div class="projects-stat-card">
+                <div class="projects-stat-val" style="color: var(--green);">100K+</div>
+                <div class="projects-stat-lbl">Enterprise Nodes Staged</div>
+            </div>
+            <div class="projects-stat-card">
+                <div class="projects-stat-val" style="color: #9d4edd;">100%</div>
+                <div class="projects-stat-lbl">Production Tested</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search & Category Controls Bar -->
+    <div class="projects-controls">
+        <div class="projects-search-row">
+            <input type="text" id="projects-search-input" class="projects-search-input" placeholder="🔍 Search projects by title, tag, or topic (e.g. PowerShell, GPO, AD, SCCM, Scraping)..." />
+            <button id="retro-sound-toggle" class="sound-btn active" title="Toggle retro UI sound effects">
+                🔊 RETRO SOUNDS: ON
+            </button>
+        </div>
+
+        <div class="projects-filter-pills" id="category-pills">
+            <button class="proj-pill active" data-cat="all">⚡ ALL PROJECTS (15)</button>
+            <button class="proj-pill" data-cat="powershell">🔧 POWERSHELL &amp; GUI</button>
+            <button class="proj-pill" data-cat="deployment">🚀 DEPLOYMENT &amp; SCCM</button>
+            <button class="proj-pill" data-cat="security">🛡️ SECURITY &amp; AD</button>
+            <button class="proj-pill" data-cat="diagnostics">📊 DIAGNOSTICS &amp; WPA</button>
+            <button class="proj-pill" data-cat="scraping">🌐 WEB SCRAPING</button>
+        </div>
+    </div>
+
+    <!-- Projects Grid Container -->
+    <div class="projects-grid" id="projects-grid">
+
+        <!-- 01: Feeling Generic? -->
+        <div class="proj-card" data-cat="security powershell" data-search="feeling generic powershell audit ad active directory account security">
+            <div class="proj-card-header bg-accent-pink">
+                <span>01 / SECURITY AUDIT</span>
+                <span>★ FEATURED</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/FeelingGeneric/" target="_blank">Feeling Generic?</a>
+                </h2>
+                <p class="proj-card-desc">
+                    PowerShell security audit framework designed to detect, track, and manage generic, shared, and expiring Active Directory user accounts across enterprise domain environments.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell</span>
+                    <span class="proj-tag">Active Directory</span>
+                    <span class="proj-tag">Security Audit</span>
+                    <span class="proj-tag">Compliance</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/FeelingGeneric/" target="_blank" class="proj-btn-primary">VISIT SITE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('feeling-generic')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 02: StageBuddy — MoveBuddy -->
+        <div class="proj-card" data-cat="deployment powershell" data-search="stagebuddy movebuddy deployment OSD staging profile migration workstation powershell">
+            <div class="proj-card-header bg-accent-cyan">
+                <span>02 / WORKSTATION OSD</span>
+                <span>TOOLS</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/MoveBuddy-StageBuddy/" target="_blank">StageBuddy — MoveBuddy</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Automated workstation staging and data migration toolset enabling IT engineers to seamlessly transfer user profile settings, app configurations, and staged OS deployments.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell</span>
+                    <span class="proj-tag">OSD Staging</span>
+                    <span class="proj-tag">Data Migration</span>
+                    <span class="proj-tag">Workstation</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/MoveBuddy-StageBuddy/" target="_blank" class="proj-btn-primary">VISIT SITE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('stagebuddy')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 03: GUI — Merge PDF Files -->
+        <div class="proj-card" data-cat="powershell" data-search="gui merge pdf files pdfsharp dotnet powershell winforms desktop utility">
+            <div class="proj-card-header bg-accent-yellow">
+                <span>03 / DESKTOP UTILITY</span>
+                <span>GUI</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/GUI-Merge-PDF-Files/" target="_blank">GUI — Merge PDF Files</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Lightweight standalone PowerShell WPF/WinForms GUI application that merges multiple PDF documents cleanly using the open-source PDFSharp.DLL assembly without paid Adobe software.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell GUI</span>
+                    <span class="proj-tag">PDFSharp.dll</span>
+                    <span class="proj-tag">.NET</span>
+                    <span class="proj-tag">WinForms</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/GUI-Merge-PDF-Files/" target="_blank" class="proj-btn-primary">VISIT SITE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('merge-pdf')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 04: Argus, My Loyal Dog! -->
+        <div class="proj-card" data-cat="powershell" data-search="argus system tray powershell loyal dog helpdesk self service agent winforms notification">
+            <div class="proj-card-header bg-accent-green">
+                <span>04 / SYSTEM TRAY AGENT</span>
+                <span>SELF-SERVICE</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/Argus-a-systemtray-app-made-with-Powershell/" target="_blank">Argus, My Loyal Dog!</a>
+                </h2>
+                <p class="proj-card-desc">
+                    System tray resident PowerShell application providing non-technical end-users with instant self-service system diagnostics, IP status, print spooler reset, and quick IT helpdesk actions.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell</span>
+                    <span class="proj-tag">System Tray API</span>
+                    <span class="proj-tag">Self-Service</span>
+                    <span class="proj-tag">HelpDesk</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/Argus-a-systemtray-app-made-with-Powershell/" target="_blank" class="proj-btn-primary">VISIT SITE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('argus')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 05: Powershell-SCCM-Staging-GUI -->
+        <div class="proj-card" data-cat="deployment powershell" data-search="sccm MECM staging gui powershell computer OSD task sequence pxe wmi">
+            <div class="proj-card-header bg-accent-orange">
+                <span>05 / ENTERPRISE OSD</span>
+                <span>SCCM</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/A-Powershell-GUI-for-staging-computers/" target="_blank">SCCM Staging GUI</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Fast &amp; reliable graphical frontend for System Center Configuration Manager (SCCM / MECM) OSD task sequences, capturing hostname, OU placement, and role-based app baselines.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell GUI</span>
+                    <span class="proj-tag">SCCM / MECM</span>
+                    <span class="proj-tag">PXE OSD</span>
+                    <span class="proj-tag">WMI API</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/A-Powershell-GUI-for-staging-computers/" target="_blank" class="proj-btn-primary">VISIT SITE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('sccm-gui')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 06: GPO — Apply Only Once -->
+        <div class="proj-card" data-cat="security" data-search="gpo group policy apply only once active directory sysadmin registry CSE WMI filter">
+            <div class="proj-card-header bg-accent-purple">
+                <span>06 / GROUP POLICY</span>
+                <span>WRITEUP</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/GPO-apply-only-once/" target="_blank">GPO — Apply Only Once</a>
+                </h2>
+                <p class="proj-card-desc">
+                    In-depth architectural breakdown explaining how to configure Group Policy Objects to execute initial setup routines exactly once per machine without recurring background overhead.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">Group Policy (GPO)</span>
+                    <span class="proj-tag">Active Directory</span>
+                    <span class="proj-tag">Registry CSE</span>
+                    <span class="proj-tag">SysAdmin</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/GPO-apply-only-once/" target="_blank" class="proj-btn-primary">READ GUIDE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('gpo-once')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 07: TCP/IP Printer Deployment GUI -->
+        <div class="proj-card" data-cat="powershell" data-search="tcp ip printer deployment gui powershell print server non admin driver wmi">
+            <div class="proj-card-header bg-accent-yellow">
+                <span>07 / PRINTER AUTOMATION</span>
+                <span>GUI</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/Deploying-TCPIP-printers-with-a-Powershell-GUI/" target="_blank">TCP/IP Printer GUI</a>
+                </h2>
+                <p class="proj-card-desc">
+                    PowerShell GUI tool allowing standard non-admin corporate users to map TCP/IP network printers dynamically, automatically binding raw socket ports and WHQL drivers.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell GUI</span>
+                    <span class="proj-tag">Print Server</span>
+                    <span class="proj-tag">TCP/IP Port</span>
+                    <span class="proj-tag">Non-Admin</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/Deploying-TCPIP-printers-with-a-Powershell-GUI/" target="_blank" class="proj-btn-primary">VISIT SITE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('printer-gui')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 08: XPATH Scraping Technique -->
+        <div class="proj-card" data-cat="scraping" data-search="xpath web scraping technique htmlagilitypack dotnet powershell dom parsing">
+            <div class="proj-card-header bg-accent-cyan">
+                <span>08 / DATA EXTRACTION</span>
+                <span>SCRAPING</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/Xpath-scraping-technique/" target="_blank">XPATH Scraping Technique</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Technical guide demonstrating high-performance web data extraction using XML Path Language (XPATH) combined with HTMLAgilityPack in PowerShell scripts.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">Web Scraping</span>
+                    <span class="proj-tag">XPATH</span>
+                    <span class="proj-tag">HTMLAgilityPack</span>
+                    <span class="proj-tag">.NET Parsing</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/Xpath-scraping-technique/" target="_blank" class="proj-btn-primary">READ GUIDE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('xpath-scraping')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 09: AD Attributes Investigation -->
+        <div class="proj-card" data-cat="security" data-search="active directory ad attributes lastlogon lastlogontimestamp domain controller replication stale account">
+            <div class="proj-card-header bg-accent-pink">
+                <span>09 / DIRECTORY AUDIT</span>
+                <span>SECURITY</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/AD-Attributes-(LastLogon,-LastLogonTimeStamp)/" target="_blank">AD Attributes Audit</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Diagnostic research paper comparing non-replicated <code style="background:var(--cream); padding:1px 4px;">LastLogon</code> vs replicated <code style="background:var(--cream); padding:1px 4px;">LastLogonTimeStamp</code> attributes across multiple Domain Controllers.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">Active Directory</span>
+                    <span class="proj-tag">Domain Controller</span>
+                    <span class="proj-tag">Replication</span>
+                    <span class="proj-tag">Security</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/AD-Attributes-(LastLogon,-LastLogonTimeStamp)/" target="_blank" class="proj-btn-primary">READ PAPER ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('ad-attributes')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 10: Learning REGEX with PowerShell -->
+        <div class="proj-card" data-cat="powershell" data-search="regex regular expression learning powershell pattern matching log parsing cheatsheet">
+            <div class="proj-card-header bg-accent-green">
+                <span>10 / REGULAR EXPRESSIONS</span>
+                <span>CHEATSHEET</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/Learning-REGEX/" target="_blank">Learning REGEX with PS</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Practical reference guide and pattern cheat sheet tailored for string validation, regex match groups, lookarounds, and fast log file processing in PowerShell.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell</span>
+                    <span class="proj-tag">Regex</span>
+                    <span class="proj-tag">Pattern Matching</span>
+                    <span class="proj-tag">Log Analysis</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/Learning-REGEX/" target="_blank" class="proj-btn-primary">READ GUIDE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('regex-guide')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 11: HP Warranty Information Scraper -->
+        <div class="proj-card" data-cat="scraping powershell" data-search="hp warranty information scraper powershell rest api asset serial number inventory">
+            <div class="proj-card-header bg-accent-orange">
+                <span>11 / ASSET AUDITING</span>
+                <span>SCRAPER</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/scrape-forwarranty/" target="_blank">HP Warranty Scraper</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Automated PowerShell tool that queries corporate hardware serial numbers against HP warranty API endpoints to track remaining hardware coverage dates.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">PowerShell</span>
+                    <span class="proj-tag">REST API</span>
+                    <span class="proj-tag">Asset Inventory</span>
+                    <span class="proj-tag">Automation</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/scrape-forwarranty/" target="_blank" class="proj-btn-primary">VISIT SITE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('hp-warranty')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 12: ODBC 64-bit Auto Deployment -->
+        <div class="proj-card" data-cat="deployment" data-search="odbc 64bit auto deployment gpo database dsn syswow64 registry redirection">
+            <div class="proj-card-header bg-accent-purple">
+                <span>12 / DATABASE DSN</span>
+                <span>DEPLOYMENT</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/ODBC64BIT/" target="_blank">ODBC 64-bit Deployment</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Architectural solution resolving 32-bit vs 64-bit ODBC driver installation conflicts and Wow6432Node registry redirection when deploying DSNs via GPO.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">ODBC Driver</span>
+                    <span class="proj-tag">Group Policy</span>
+                    <span class="proj-tag">Database DSN</span>
+                    <span class="proj-tag">SysWOW64</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/ODBC64BIT/" target="_blank" class="proj-btn-primary">READ GUIDE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('odbc-deploy')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 13: Client Slow Shutdown Analysis -->
+        <div class="proj-card" data-cat="diagnostics" data-search="client slow shutdown analysis windows diagnostics event log troubleshooting kernel driver">
+            <div class="proj-card-header bg-accent-pink">
+                <span>13 / SYSTEM DIAGNOSTICS</span>
+                <span>WINDOWS</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/Slow-shutdown-analysis/" target="_blank">Slow Shutdown Analysis</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Root cause investigation methodology pinpointing faulting kernel drivers and hung background services responsible for delayed Windows client shutdowns.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">Windows Diagnostics</span>
+                    <span class="proj-tag">Event Logs</span>
+                    <span class="proj-tag">Kernel Drivers</span>
+                    <span class="proj-tag">Root Cause</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/Slow-shutdown-analysis/" target="_blank" class="proj-btn-primary">READ GUIDE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('slow-shutdown')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 14: Slow Post-Boot Procedure Analysis -->
+        <div class="proj-card" data-cat="diagnostics" data-search="slow post boot analysis wpa wpr ETL performance trace windows kernel disk io">
+            <div class="proj-card-header bg-accent-cyan">
+                <span>14 / PERFORMANCE TRACING</span>
+                <span>WPA / WPR</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/Slow-Post-boot/" target="_blank">Slow Post-Boot Trace</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Advanced performance tuning guide using Windows Performance Analyzer (WPA) and Recorder (WPR) to analyze ETL trace logs during post-logon initialization phases.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">WPA / WPR</span>
+                    <span class="proj-tag">ETL Traces</span>
+                    <span class="proj-tag">Performance</span>
+                    <span class="proj-tag">Kernel Tuning</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/Slow-Post-boot/" target="_blank" class="proj-btn-primary">READ GUIDE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('slow-boot')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+        <!-- 15: BSOD Crash Dump Analysis -->
+        <div class="proj-card" data-cat="diagnostics" data-search="bsod crash dump analysis windbg minidump blue screen kernel debug pdb symbols">
+            <div class="proj-card-header bg-accent-orange">
+                <span>15 / KERNEL DEBUGGING</span>
+                <span>WINDBG</span>
+            </div>
+            <div class="proj-card-body">
+                <h2 class="proj-card-title">
+                    <a href="https://kristofstroobants.github.io/BSOD-all-over-the-place/" target="_blank">BSOD Crash Dump Audit</a>
+                </h2>
+                <p class="proj-card-desc">
+                    Debugging guide utilizing WinDbg, Microsoft public symbol servers (PDBs), and memory dump analysis to resolve widespread Windows blue screen crashes.
+                </p>
+                <div class="proj-card-tags">
+                    <span class="proj-tag">WinDbg</span>
+                    <span class="proj-tag">Crash Dump</span>
+                    <span class="proj-tag">Kernel Debugging</span>
+                    <span class="proj-tag">BSOD</span>
+                </div>
+            </div>
+            <div class="proj-card-footer">
+                <a href="https://kristofstroobants.github.io/BSOD-all-over-the-place/" target="_blank" class="proj-btn-primary">READ GUIDE ↗</a>
+                <button class="proj-btn-secondary" onclick="openProjectModal('bsod-analysis')">PREVIEW 👁️</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Popup Container -->
+<div class="proj-modal-overlay" id="proj-modal-overlay">
+    <div class="proj-modal-card" id="proj-modal-card">
+        <button class="proj-modal-close" onclick="closeProjectModal()">✕ CLOSE</button>
+        <div id="proj-modal-body">
+            <!-- Dynamic Modal Content populated by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Projects Interactive Script Engine -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var searchInput = document.getElementById("projects-search-input");
+    var pills = document.querySelectorAll("#category-pills .proj-pill");
+    var cards = document.querySelectorAll(".proj-card");
+    var soundToggleBtn = document.getElementById("retro-sound-toggle");
+
+    var currentCat = "all";
+    var soundEnabled = true;
+
+    // Web Audio Synthesizer Sound Generator
+    function playRetroBeep(freq, type, duration) {
+        if (!soundEnabled) return;
+        try {
+            var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            var osc = audioCtx.createOscillator();
+            var gain = audioCtx.createGain();
+            osc.type = type || "sine";
+            osc.frequency.setValueAtTime(freq || 440, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (duration || 0.08));
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + (duration || 0.08));
+        } catch (e) {
+            console.warn("Audio unavailable", e);
+        }
+    }
+
+    // Toggle Sound Effects
+    if (soundToggleBtn) {
+        soundToggleBtn.addEventListener("click", function() {
+            soundEnabled = !soundEnabled;
+            if (soundEnabled) {
+                soundToggleBtn.classList.add("active");
+                soundToggleBtn.textContent = "🔊 RETRO SOUNDS: ON";
+                playRetroBeep(520, "sine", 0.12);
+            } else {
+                soundToggleBtn.classList.remove("active");
+                soundToggleBtn.textContent = "🔇 RETRO SOUNDS: OFF";
+            }
+        });
+    }
+
+    // Live Filtering Engine
+    function filterProjects() {
+        var query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+        cards.forEach(function(card) {
+            var cardCat = card.getAttribute("data-cat") || "";
+            var searchData = card.getAttribute("data-search") || "";
+            var matchesCat = (currentCat === "all" || cardCat.indexOf(currentCat) !== -1);
+            var matchesQuery = (query === "" || searchData.toLowerCase().indexOf(query) !== -1 || card.textContent.toLowerCase().indexOf(query) !== -1);
+
+            if (matchesCat && matchesQuery) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener("input", function() {
+            filterProjects();
+        });
+    }
+
+    pills.forEach(function(pill) {
+        pill.addEventListener("click", function() {
+            pills.forEach(function(p) { p.classList.remove("active"); });
+            pill.classList.add("active");
+            currentCat = pill.getAttribute("data-cat");
+            playRetroBeep(420, "square", 0.06);
+            filterProjects();
+        });
+    });
+});
+
+// Modal Details Data Store
+var modalDataMap = {
+    'feeling-generic': {
+        title: 'Feeling Generic?',
+        category: 'SECURITY & ACTIVE DIRECTORY',
+        accentClass: 'bg-accent-pink',
+        link: 'https://kristofstroobants.github.io/FeelingGeneric/',
+        tags: ['PowerShell', 'Active Directory', 'Security Audit', 'Compliance'],
+        overview: 'Automated PowerShell security audit utility built to track, flag, and remediate generic, unmonitored, and expiring user accounts across complex multi-domain Active Directory forests.',
+        details: [
+            'Scans Active Directory domain controllers for default or generic naming conventions (e.g. admin, temp, test).',
+            'Identifies accounts with non-expiring passwords or stale last-logon timestamps.',
+            'Generates executive CSV and formatted HTML security reports for IT compliance audits.',
+            'Includes automated remediation flags to safely disable unverified generic credentials.'
+        ]
+    },
+    'stagebuddy': {
+        title: 'StageBuddy — MoveBuddy',
+        category: 'WORKSTATION DEPLOYMENT',
+        accentClass: 'bg-accent-cyan',
+        link: 'https://kristofstroobants.github.io/MoveBuddy-StageBuddy/',
+        tags: ['PowerShell', 'OSD Staging', 'Data Migration', 'Workstation'],
+        overview: 'Comprehensive workstation staging and data migration framework designed for IT desktop support engineers during corporate PC refresh projects.',
+        details: [
+            'Captures local user profile data, browser bookmarks, network mapped drives, and printer configurations.',
+            'Automates post-OSD computer domain joining and software entitlement validation.',
+            'Reduces desk side migration time per workstation by over 70%.',
+            'Provides technician logging and automated roll-back triggers upon task failure.'
+        ]
+    },
+    'merge-pdf': {
+        title: 'GUI — Merge PDF Files',
+        category: 'DESKTOP UTILITIES',
+        accentClass: 'bg-accent-yellow',
+        link: 'https://kristofstroobants.github.io/GUI-Merge-PDF-Files/',
+        tags: ['PowerShell GUI', 'PDFSharp.dll', '.NET', 'WinForms'],
+        overview: 'Standalone GUI desktop tool written entirely in PowerShell using .NET WPF/WinForms and PDFSharp.dll, allowing users to quickly merge PDF files without requiring expensive PDF software licenses.',
+        details: [
+            'Drag-and-drop user interface for batch selecting input PDF files.',
+            'Re-order documents before merging into a single consolidated PDF file.',
+            'Uses raw .NET assembly binding without requiring external command line executables.',
+            'Completely portable zero-install script usable by standard non-admin corporate users.'
+        ]
+    },
+    'argus': {
+        title: 'Argus, My Loyal Dog!',
+        category: 'SYSTEM TRAY SELF-SERVICE',
+        accentClass: 'bg-accent-green',
+        link: 'https://kristofstroobants.github.io/Argus-a-systemtray-app-made-with-Powershell/',
+        tags: ['PowerShell', 'System Tray API', 'Self-Service', 'HelpDesk'],
+        overview: 'System tray application built with PowerShell WinForms that resides quietly in the notification bar, providing non-technical end-users with instant self-service utilities.',
+        details: [
+            'Provides one-click IP address lookup, hostname display, and default gateway connectivity testing.',
+            'Enables users to restart local Print Spooler service without administrative rights.',
+            'Clears DNS resolver cache and logs tickets directly to the IT helpdesk queue.',
+            'Reduces basic Tier-1 support calls for common workstation issues.'
+        ]
+    },
+    'sccm-gui': {
+        title: 'Powershell SCCM Staging GUI',
+        category: 'ENTERPRISE DEPLOYMENT',
+        accentClass: 'bg-accent-orange',
+        link: 'https://kristofstroobants.github.io/A-Powershell-GUI-for-staging-computers/',
+        tags: ['PowerShell GUI', 'SCCM / MECM', 'PXE OSD', 'WMI API'],
+        overview: 'Intuitive graphical interface for System Center Configuration Manager (SCCM / MECM) task sequence operating system deployments.',
+        details: [
+            'Replaces complex default SCCM task sequence prompts with a clean interactive GUI.',
+            'Queries Active Directory for available OUs and validates unique computer hostname availability live.',
+            'Binds user primary device relationships and selects role-based software collections dynamically.',
+            'Integrates with MDT / SCCM task sequence variables via WMI.'
+        ]
+    },
+    'gpo-once': {
+        title: 'GPO — Apply Only Once',
+        category: 'GROUP POLICY ARCHITECTURE',
+        accentClass: 'bg-accent-purple',
+        link: 'https://kristofstroobants.github.io/GPO-apply-only-once/',
+        tags: ['Group Policy (GPO)', 'Active Directory', 'Registry CSE', 'SysAdmin'],
+        overview: 'Technical writeup detailing architectural patterns for enforcing Group Policy Objects to execute setup scripts exactly once during initial provisioning.',
+        details: [
+            'Explains Group Policy Client Side Extension (CSE) flags and registry marker mechanisms.',
+            'Provides WMI filter queries and script wrappers to prevent repeated background overhead.',
+            'Ideal for one-time software configuration, certificate deployment, and initial security hardening.',
+            'Eliminates logon delays caused by redundant policy processing cycles.'
+        ]
+    },
+    'printer-gui': {
+        title: 'TCP/IP Printer Deployment GUI',
+        category: 'PRINTER AUTOMATION',
+        accentClass: 'bg-accent-yellow',
+        link: 'https://kristofstroobants.github.io/Deploying-TCPIP-printers-with-a-Powershell-GUI/',
+        tags: ['PowerShell GUI', 'Print Server', 'TCP/IP Port', 'Non-Admin'],
+        overview: 'PowerShell application that enables standard non-admin users to discover and map network TCP/IP printers directly from their desktops.',
+        details: [
+            'Bypasses administrative driver installation prompts by pre-binding WHQL print drivers.',
+            'Automatically creates raw TCP/IP printer ports (port 9100 / LPR) dynamically via WMI.',
+            'Includes visual office floor plan selector or department dropdown lists.',
+            'Significantly lowers printer mapping helpdesk support tickets.'
+        ]
+    },
+    'xpath-scraping': {
+        title: 'XPATH Scraping Technique',
+        category: 'DATA EXTRACTION & WEB',
+        accentClass: 'bg-accent-cyan',
+        link: 'https://kristofstroobants.github.io/Xpath-scraping-technique/',
+        tags: ['Web Scraping', 'XPATH', 'HTMLAgilityPack', '.NET Parsing'],
+        overview: 'Technical article detailing robust web data extraction techniques utilizing XPATH queries combined with HTMLAgilityPack in PowerShell.',
+        details: [
+            'Demonstrates how to parse complex HTML DOM structures and extract nested element values.',
+            'Handles dynamic tables, pagination, and malformed HTML tags gracefully.',
+            'Includes PowerShell function templates for automated REST and web scraping workflows.',
+            'Compares performance between regex matching, HTMLAgilityPack, and DOM query selectors.'
+        ]
+    },
+    'ad-attributes': {
+        title: 'Investigating AD Attributes',
+        category: 'ACTIVE DIRECTORY AUDITING',
+        accentClass: 'bg-accent-pink',
+        link: 'https://kristofstroobants.github.io/AD-Attributes-(LastLogon,-LastLogonTimeStamp)/',
+        tags: ['Active Directory', 'Domain Controller', 'Replication', 'Security'],
+        overview: 'Technical research guide clarifying Active Directory logon replication behavior by analyzing LastLogon vs LastLogonTimeStamp integer attributes.',
+        details: [
+            'Explains the non-replicated nature of LastLogon (requires querying every DC in domain).',
+            'Details the 14-day default replication interval of LastLogonTimeStamp.',
+            'Provides multi-DC querying PowerShell scripts to accurately pinpoint truly inactive domain accounts.',
+            'Essential reading for AD cleanup projects and cyber hygiene compliance.'
+        ]
+    },
+    'regex-guide': {
+        title: 'Learning REGEX with PowerShell',
+        category: 'CHEATSHEET & GUIDE',
+        accentClass: 'bg-accent-green',
+        link: 'https://kristofstroobants.github.io/Learning-REGEX/',
+        tags: ['PowerShell', 'Regex', 'Pattern Matching', 'Log Analysis'],
+        overview: 'Comprehensive regular expressions reference guide specifically structured for system administrators parsing server logs and automating string manipulation.',
+        details: [
+            'Breakdown of PowerShell operators (-match, -replace, -split) and $Matches automatic variable.',
+            'Practical patterns for IP addresses, MAC addresses, GUIDs, email addresses, and event logs.',
+            'Performance optimization tips for searching multi-gigabyte text files.',
+            'Includes cheat sheet table of quantifiers, anchors, and lookaround assertions.'
+        ]
+    },
+    'hp-warranty': {
+        title: 'HP Warranty Information Scraper',
+        category: 'ASSET INVENTORY',
+        accentClass: 'bg-accent-orange',
+        link: 'https://kristofstroobants.github.io/scrape-forwarranty/',
+        tags: ['PowerShell', 'REST API', 'Asset Inventory', 'Automation'],
+        overview: 'Automated PowerShell tool for IT asset managers to query corporate PC serial numbers against HP warranty API endpoints.',
+        details: [
+            'Accepts CSV input files containing workstation hardware serial numbers.',
+            'Sends batch queries to retrieve warranty start date, expiration date, and entitlement tier.',
+            'Exports structured reports highlighting devices nearing hardware support expiration.',
+            'Integrates with ITAM database and asset lifecycle management systems.'
+        ]
+    },
+    'odbc-deploy': {
+        title: 'ODBC 64-bit Auto Deployment',
+        category: 'DATABASE & SYSADMIN',
+        accentClass: 'bg-accent-purple',
+        link: 'https://kristofstroobants.github.io/ODBC64BIT/',
+        tags: ['ODBC Driver', 'Group Policy', 'Database DSN', 'SysWOW64'],
+        overview: 'System architecture writeup solving 32-bit vs 64-bit ODBC driver installation hurdles on modern 64-bit Windows OS environments.',
+        details: [
+            'Explains SysWOW64 vs System32 registry redirection paths (Wow6432Node).',
+            'Provides Group Policy Preference (GPP) registry configuration templates for automated DSN creation.',
+            'Ensures legacy 32-bit apps and 64-bit reporting tools can resolve database connections.',
+            'Tested across SQL Server, Oracle, and PostgreSQL ODBC driver deployments.'
+        ]
+    },
+    'slow-shutdown': {
+        title: 'Client Slow Shutdown Analysis',
+        category: 'WINDOWS DIAGNOSTICS',
+        accentClass: 'bg-accent-pink',
+        link: 'https://kristofstroobants.github.io/Slow-shutdown-analysis/',
+        tags: ['Windows Diagnostics', 'Event Logs', 'Kernel Drivers', 'Root Cause'],
+        overview: 'Diagnostic troubleshooting methodology for identifying hung processes and kernel driver timeouts causing corporate laptops to hang during shutdown.',
+        details: [
+            'Analyzes Windows Operational Diagnostics Event IDs 200, 201, and 6006.',
+            'Traces driver power state requests and un-responsive service control manager signals.',
+            'Provides registry tuning parameters (WaitToKillServiceTimeout) and driver update protocols.',
+            'Successfully resolved widespread 5+ minute shutdown delays on enterprise laptops.'
+        ]
+    },
+    'slow-boot': {
+        title: 'Slow Post-Boot Trace Analysis',
+        category: 'PERFORMANCE TRACING',
+        accentClass: 'bg-accent-cyan',
+        link: 'https://kristofstroobants.github.io/Slow-Post-boot/',
+        tags: ['WPA / WPR', 'ETL Traces', 'Performance', 'Kernel Tuning'],
+        overview: 'Advanced performance analysis guide utilizing Windows Performance Recorder (WPR) and Windows Performance Analyzer (WPA) to optimize Windows boot and logon speeds.',
+        details: [
+            'Explains how to capture ETL trace files during Windows boot and desktop login phases.',
+            'Identifies disk I/O bottlenecks, high CPU process contention, and slow Group Policy execution.',
+            'Provides step-by-step WPA graph analysis techniques for IT engineering teams.',
+            'Dramatically improves workstation boot times and overall user experience.'
+        ]
+    },
+    'bsod-analysis': {
+        title: 'BSOD Crash Dump Analysis',
+        category: 'KERNEL DEBUGGING',
+        accentClass: 'bg-accent-orange',
+        link: 'https://kristofstroobants.github.io/BSOD-all-over-the-place/',
+        tags: ['WinDbg', 'Crash Dump', 'Kernel Debugging', 'BSOD'],
+        overview: 'Step-by-step kernel debugging guide leveraging WinDbg and Microsoft public symbol servers to isolate driver faults causing widespread Windows blue screens.',
+        details: [
+            'Configures Windows minidump and memory.dmp settings across enterprise fleets.',
+            'Demonstrates symbol path configuration (srv*https://msdl.microsoft.com/download/symbols).',
+            'Explains WinDbg commands (!analyze -v, lmkv, kv, dps) to inspect call stacks.',
+            'Successfully identified misbehaving third-party antivirus and storage drivers causing blue screen crashes.'
+        ]
+    }
+};
+
+function openProjectModal(key) {
+    var item = modalDataMap[key];
+    if (!item) return;
+
+    var overlay = document.getElementById("proj-modal-overlay");
+    var body = document.getElementById("proj-modal-body");
+
+    var tagsHtml = item.tags.map(function(t) {
+        return '<span class="proj-tag">' + t + '</span>';
+    }).join(' ');
+
+    var detailsHtml = item.details.map(function(d) {
+        return '<li style="margin-bottom: 8px; position: relative; padding-left: 16px;"><span style="position: absolute; left: 0; color: var(--line);">■</span> ' + d + '</li>';
+    }).join('');
+
+    body.innerHTML = `
+        <div class="proj-hero-badge ${item.accentClass}" style="display:inline-block; font-family:'Archivo Black',sans-serif; font-size:10px; padding:3px 10px; border:2px solid var(--line); box-shadow:2px 2px 0 var(--line); margin-bottom:10px; uppercase;">
+            ${item.category}
+        </div>
+        <h2 style="font-family:'Archivo Black',sans-serif; font-size:24px; text-transform:uppercase; margin-bottom:12px; line-height:1.2;">
+            ${item.title}
+        </h2>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+            ${tagsHtml}
+        </div>
+        <p style="font-size:13px; line-height:1.6; color:#333; margin-bottom:18px; border-left:4px solid var(--line); padding-left:12px; background:#fffdf5; padding-top:8px; padding-bottom:8px;">
+            ${item.overview}
+        </p>
+        <h4 style="font-family:'Archivo Black',sans-serif; font-size:12px; text-transform:uppercase; margin-bottom:10px;">
+            KEY FEATURES &amp; ARCHITECTURE NOTES:
+        </h4>
+        <ul style="list-style:none; font-size:13px; line-height:1.6; margin-bottom:20px;">
+            ${detailsHtml}
+        </ul>
+        <div style="border-top:2px dashed var(--line); padding-top:16px; display:flex; gap:10px;">
+            <a href="${item.link}" target="_blank" class="proj-btn-primary" style="padding:10px 18px; font-size:11px;">
+                OPEN FULL REPO / ARTICLE ↗
+            </a>
+            <button onclick="closeProjectModal()" class="proj-btn-secondary" style="padding:10px 18px; font-size:11px;">
+                BACK TO LIST ✕
+            </button>
+        </div>
+    `;
+
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeProjectModal() {
+    var overlay = document.getElementById("proj-modal-overlay");
+    if (overlay) overlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeProjectModal();
+    }
+});
+
+var overlayEl = document.getElementById("proj-modal-overlay");
+if (overlayEl) {
+    overlayEl.addEventListener("click", function(e) {
+        if (e.target === overlayEl) {
+            closeProjectModal();
+        }
+    });
+}
+</script>
