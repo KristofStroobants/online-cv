@@ -1,15 +1,119 @@
-    <!-- Javascript -->          
-    <script type="text/javascript" src="{{site.baseurl}}/assets/plugins/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <!-- custom js -->
-    <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script> 
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var framesContainer = document.querySelector("#frames");
+    var paletteButtons = document.querySelectorAll(".palette-btn");
+    var counterEl = document.querySelector("#counter");
+    var backdrop = document.querySelector("#backdrop");
 
-  ga('create', 'UA-83979019-1', 'auto');
-  ga('send', 'pageview');
+    // Close enlarged card function
+    function closeExpandedCard() {
+        var expanded = document.querySelector(".frame.expanded");
+        if (expanded) {
+            expanded.classList.remove("expanded");
+        }
+        if (backdrop) {
+            backdrop.classList.remove("active");
+        }
+        document.body.classList.remove("modal-open");
+    }
 
+    if (backdrop) {
+        backdrop.addEventListener("click", closeExpandedCard);
+    }
+
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") {
+            closeExpandedCard();
+        }
+    });
+
+    // Category Filtering
+    paletteButtons.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            paletteButtons.forEach(function(b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+
+            var filter = btn.getAttribute("data-filter");
+            var frames = document.querySelectorAll(".frame");
+            var visibleCount = 0;
+
+            frames.forEach(function(frame) {
+                var cat = frame.getAttribute("data-category");
+                if (filter === "all" || cat === filter) {
+                    frame.style.display = "flex";
+                    visibleCount++;
+                } else {
+                    frame.style.display = "none";
+                }
+            });
+
+            if (counterEl) {
+                counterEl.textContent = visibleCount + " SCENES · " + (filter === "all" ? "CLICK TO ENLARGE" : "FILTERED BY " + filter.toUpperCase());
+            }
+        });
+    });
+
+    // Enlarge card on click & Drag-and-drop reordering
+    var dragFrame = null;
+
+    function initFrameEvents(frame) {
+        // Enlarge on card click (unless clicking a link or close button)
+        frame.addEventListener("click", function(e) {
+            if (e.target.closest("a")) return; // Let links be clicked normally
+            
+            if (e.target.closest(".frame-close-btn")) {
+                e.stopPropagation();
+                closeExpandedCard();
+                return;
+            }
+
+            if (!frame.classList.contains("expanded")) {
+                closeExpandedCard(); // Close any previously open card
+                frame.classList.add("expanded");
+                if (backdrop) backdrop.classList.add("active");
+                document.body.classList.add("modal-open");
+            }
+        });
+
+        // Drag events
+        frame.addEventListener("dragstart", function(e) {
+            if (frame.classList.contains("expanded")) {
+                e.preventDefault();
+                return;
+            }
+            dragFrame = frame;
+            frame.classList.add("dragging");
+            e.dataTransfer.effectAllowed = "move";
+        });
+
+        frame.addEventListener("dragover", function(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "move";
+        });
+
+        frame.addEventListener("drop", function(e) {
+            e.preventDefault();
+            if (dragFrame && dragFrame !== frame && !frame.classList.contains("expanded")) {
+                var allFrames = Array.from(framesContainer.children);
+                var dragIdx = allFrames.indexOf(dragFrame);
+                var dropIdx = allFrames.indexOf(frame);
+
+                if (dragIdx < dropIdx) {
+                    framesContainer.insertBefore(dragFrame, frame.nextSibling);
+                } else {
+                    framesContainer.insertBefore(dragFrame, frame);
+                }
+            }
+        });
+
+        frame.addEventListener("dragend", function() {
+            if (dragFrame) {
+                dragFrame.classList.remove("dragging");
+                dragFrame = null;
+            }
+        });
+    }
+
+    document.querySelectorAll(".frame").forEach(initFrameEvents);
+});
 </script>

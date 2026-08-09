@@ -6,7 +6,7 @@ baseurl: '/online-cv' #change it according to your repository name
 # Enable one of these styles by removing #. Style will be applied only after restarting the build or serve.
 #style: styles-2
 #style: styles-3 groen
-style: styles-4
+style: storyboard
 #style: styles-5 oranje
 #style: styles-6 
 
@@ -14,6 +14,8 @@ style: styles-4
 #Profile information
 name: Kristof Stroobants
 tagline: Windows System Administrator
+status: HIRED
+focus: CLOUD / AUTOMATION / AI
 pic: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
 #sidebar links
