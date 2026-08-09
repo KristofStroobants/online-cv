@@ -1,91 +1,78 @@
-<!-- Custom Interactive JavaScript for Story Stack Theme -->
 <script>
-function copyEmail(email) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(showToast);
-    } else {
-        var dummy = document.createElement("textarea");
-        document.body.appendChild(dummy);
-        dummy.value = email;
-        dummy.select();
-        document.execCommand("copy");
-        document.body.removeChild(dummy);
-        showToast();
-    }
-}
-
-function showToast() {
-    var toast = document.getElementById("toast");
-    if (toast) {
-        toast.classList.add("show");
-        setTimeout(function() {
-            toast.classList.remove("show");
-        }, 2200);
-    }
-}
-
-// Scroll-spy active link highlighting & drag-reorder simulation for blocks
 document.addEventListener("DOMContentLoaded", function() {
-    var sections = document.querySelectorAll(".block[id]");
-    var navLinks = document.querySelectorAll(".rail-nav-link");
+    var framesContainer = document.querySelector("#frames");
+    var paletteButtons = document.querySelectorAll(".palette-btn");
+    var counterEl = document.querySelector("#counter");
 
-    window.addEventListener("scroll", function() {
-        var current = "";
-        sections.forEach(function(section) {
-            var sectionTop = section.offsetTop - 120;
-            if (window.pageYOffset >= sectionTop) {
-                current = section.getAttribute("id");
-            }
-        });
+    // Category Filtering
+    paletteButtons.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            paletteButtons.forEach(function(b) { b.classList.remove("active"); });
+            btn.classList.add("active");
 
-        navLinks.forEach(function(link) {
-            link.classList.remove("active");
-            if (current && link.getAttribute("href") === "#" + current) {
-                link.classList.add("active");
+            var filter = btn.getAttribute("data-filter");
+            var frames = document.querySelectorAll(".frame");
+            var visibleCount = 0;
+
+            frames.forEach(function(frame) {
+                var cat = frame.getAttribute("data-category");
+                if (filter === "all" || cat === filter) {
+                    frame.style.display = "flex";
+                    visibleCount++;
+                } else {
+                    frame.style.display = "none";
+                }
+            });
+
+            if (counterEl) {
+                counterEl.textContent = visibleCount + " SCENES · " + (filter === "all" ? "DRAG TO REORDER" : "FILTERED BY " + filter.toUpperCase());
             }
         });
     });
 
-    // Make story blocks draggable for fun stack ordering like 01-story-stack.html concept
-    var blocks = document.querySelectorAll(".block");
-    var dragBlock = null;
+    // Drag and drop reordering & selection
+    var dragFrame = null;
 
-    blocks.forEach(function(block) {
-        block.setAttribute("draggable", "true");
-
-        block.addEventListener("dragstart", function(e) {
-            dragBlock = block;
-            block.style.opacity = "0.4";
+    function initDragEvents(frame) {
+        frame.addEventListener("dragstart", function(e) {
+            dragFrame = frame;
+            frame.classList.add("dragging");
             e.dataTransfer.effectAllowed = "move";
         });
 
-        block.addEventListener("dragover", function(e) {
+        frame.addEventListener("dragover", function(e) {
             e.preventDefault();
             e.dataTransfer.dropEffect = "move";
         });
 
-        block.addEventListener("drop", function(e) {
+        frame.addEventListener("drop", function(e) {
             e.preventDefault();
-            if (dragBlock && dragBlock !== block) {
-                var parent = block.parentNode;
-                var allBlocks = Array.from(parent.children);
-                var dragIdx = allBlocks.indexOf(dragBlock);
-                var dropIdx = allBlocks.indexOf(block);
+            if (dragFrame && dragFrame !== frame) {
+                var allFrames = Array.from(framesContainer.children);
+                var dragIdx = allFrames.indexOf(dragFrame);
+                var dropIdx = allFrames.indexOf(frame);
 
                 if (dragIdx < dropIdx) {
-                    parent.insertBefore(dragBlock, block.nextSibling);
+                    framesContainer.insertBefore(dragFrame, frame.nextSibling);
                 } else {
-                    parent.insertBefore(dragBlock, block);
+                    framesContainer.insertBefore(dragFrame, frame);
                 }
             }
         });
 
-        block.addEventListener("dragend", function() {
-            if (dragBlock) {
-                dragBlock.style.opacity = "1";
-                dragBlock = null;
+        frame.addEventListener("dragend", function() {
+            if (dragFrame) {
+                dragFrame.classList.remove("dragging");
+                dragFrame = null;
             }
         });
-    });
+
+        frame.addEventListener("click", function() {
+            document.querySelectorAll(".frame").forEach(function(f) { f.classList.remove("selected"); });
+            frame.classList.add("selected");
+        });
+    }
+
+    document.querySelectorAll(".frame").forEach(initDragEvents);
 });
 </script>

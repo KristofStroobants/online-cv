@@ -1,54 +1,51 @@
-<aside class="rail">
-    <div class="brand-wrapper">
-        <img class="profile-avatar" src="{{site.baseurl}}/assets/images/{% if site.pic %}{{ site.pic }}{% else %}profile.png{% endif %}" alt="{% if site.name %}{{site.name}}{% else %}Kristof Stroobants{% endif %}" />
-        <h2 class="brand-name">{% if site.name %}{{site.name}}{% else %}Kristof Stroobants{% endif %}</h2>
-        <div class="brand-title">{% if site.tagline %}{{site.tagline}}{% else %}Windows System Administrator{% endif %}</div>
+<aside class="info">
+    <span class="label">CURRICULUM VITAE STORYBOARD</span>
+    <h1 class="info-name">{% if site.name %}{{site.name}}{% else %}Kristof Stroobants{% endif %}</h1>
+    <div class="info-tagline">{% if site.tagline %}{{site.tagline}}{% else %}Windows System Administrator &amp; Infrastructure Engineer{% endif %}</div>
+
+    <div class="fields">
+        <div class="chip">
+            ROLE
+            <b>INFRA ENGINEER</b>
+        </div>
+        <div class="chip">
+            SPECIALTY
+            <b>POWERSHELL</b>
+        </div>
+        <div class="chip">
+            LOCATION
+            <b>BELGIUM</b>
+        </div>
+        <div class="chip">
+            STATUS
+            <b>AVAILABLE</b>
+        </div>
     </div>
 
-    <nav class="rail-nav">
-        <a href="#career-profile" class="rail-nav-link active">
-            <span class="rail-nav-icon"><i class="fa fa-user-o"></i></span> Profile
-        </a>
-        <a href="#experience" class="rail-nav-link">
-            <span class="rail-nav-icon"><i class="fa fa-briefcase"></i></span> Experience
-        </a>
-        <a href="#skills" class="rail-nav-link">
-            <span class="rail-nav-icon"><i class="fa fa-code"></i></span> Skills & Proficiency
-        </a>
-        <a href="#projects" class="rail-nav-link">
-            <span class="rail-nav-icon"><i class="fa fa-archive"></i></span> Projects & Articles
-        </a>
-        <a href="#education-languages" class="rail-nav-link">
-            <span class="rail-nav-icon"><i class="fa fa-graduation-cap"></i></span> Background
-        </a>
-    </nav>
+    <p class="info-bio">
+        Build the CV like a contact sheet. Every experience, project, and skill is a scene; drag cards left or right until the story reads correctly.
+    </p>
 
-    <div class="rail-contacts">
+    <div class="info-contacts">
         {% if site.email %}
-        <a href="mailto:{{site.email}}" class="contact-item">
+        <a href="mailto:{{site.email}}" class="contact-chip">
             <i class="fa fa-envelope"></i> <span>{{site.email}}</span>
         </a>
         {% endif %}
         {% if site.website %}
-        <a href="http://{{site.website}}" target="_blank" class="contact-item">
+        <a href="http://{{site.website}}" target="_blank" class="contact-chip">
             <i class="fa fa-globe"></i> <span>{{site.website}}</span>
         </a>
         {% endif %}
         {% if site.linkedin %}
-        <a href="https://linkedin.com/in/{{site.linkedin}}" target="_blank" class="contact-item">
+        <a href="https://linkedin.com/in/{{site.linkedin}}" target="_blank" class="contact-chip">
             <i class="fa fa-linkedin"></i> <span>LinkedIn Profile</span>
         </a>
         {% endif %}
         {% if site.github %}
-        <a href="https://github.com/{{site.github}}" target="_blank" class="contact-item">
+        <a href="https://github.com/{{site.github}}" target="_blank" class="contact-chip">
             <i class="fa fa-github"></i> <span>github.com/{{site.github}}</span>
         </a>
         {% endif %}
-    </div>
-
-    <div class="rail-note">
-        STORY STACK CV<br>
-        Warm paper editorial theme.<br>
-        Autosaved & responsive.
     </div>
 </aside>

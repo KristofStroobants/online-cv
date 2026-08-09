@@ -6,46 +6,50 @@ layout: compress
 {% include head.html %}
 
 <body>
-    <div class="shell">
-        {% include sidebar.html %}
-        
-        <main>
-            <header class="top-bar">
-                <div class="crumb">
-                    <span class="crumb-dot"></span>
-                    Curriculum Vitae · {% if site.name %}{{site.name}}{% else %}Kristof Stroobants{% endif %}
-                </div>
-                <div class="top-actions">
-                    <button class="btn-pill" id="btn-copy-email" onclick="copyEmail('{% if site.email %}{{site.email}}{% else %}kristofstroobants@gmail.com{% endif %}')">
-                        <i class="fa fa-envelope"></i> Copy Email
-                    </button>
-                    <button class="btn-pill btn-primary" onclick="window.print()">
-                        <i class="fa fa-print"></i> Print / PDF
-                    </button>
-                </div>
-            </header>
+    <div class="app">
+        <header class="top">
+            <div class="brand">
+                {% if site.name %}{{site.name}}{% else %}KRISTOF STROOBANTS{% endif %}
+                <span class="brand-badge">CV / CUT 02</span>
+            </div>
+            <nav class="nav-steps">
+                <a href="#summary" class="nav-step active">01 PROFILE</a>
+                <a href="#experience" class="nav-step">02 EXPERIENCE</a>
+                <a href="#skills" class="nav-step">03 SKILLS</a>
+                <a href="#projects" class="nav-step">04 PROJECTS</a>
+                <a href="#education" class="nav-step">05 BACKGROUND</a>
+            </nav>
+            <button class="top-btn" onclick="window.print()">
+                PRINT / SAVE PDF ↗
+            </button>
+        </header>
 
-            <article class="sheet">
-                <div class="kicker">CURRICULUM VITAE · {% if site.tagline %}{{site.tagline}}{% else %}WINDOWS SYSTEM ADMINISTRATOR{% endif %}</div>
-                <h1 class="sheet-title">{% if site.name %}{{site.name}}{% else %}Kristof Stroobants{% endif %}</h1>
-                <div class="sheet-tagline">Infrastructure Engineer & System Administrator specializing in PowerShell automation and self-service solutions.</div>
-                
-                <div class="meta-pills">
-                    <span class="meta-pill"><i class="fa fa-map-marker"></i> Schaarbeek / Leuven, Belgium</span>
-                    <span class="meta-pill"><i class="fa fa-terminal"></i> PowerShell & Automation</span>
-                    <span class="meta-pill"><i class="fa fa-envelope"></i> {{site.email}}</span>
+        <main class="work">
+            {% include sidebar.html %}
+
+            <section class="canvas">
+                <div class="canvas-header">
+                    <h1>ARRANGE &amp; EXPLORE THE DAY</h1>
+                    <p class="canvas-sub">Contact sheet storyboards. Drag cards horizontally to reorder or click a scene to inspect.</p>
                 </div>
 
-                <div class="stack" id="stack">
+                <div class="frames-container" id="frames">
                     {{content}}
                 </div>
-
-                {% include footer.html %}
-            </article>
+            </section>
         </main>
-    </div>
 
-    <div class="toast" id="toast">Copied email address!</div>
+        <footer class="palette">
+            <strong>FILTER SCENES:</strong>
+            <button class="palette-btn active" data-filter="all">⚡ ALL SCENES</button>
+            <button class="palette-btn" data-filter="summary">PROFILE</button>
+            <button class="palette-btn" data-filter="experience">EXPERIENCE</button>
+            <button class="palette-btn" data-filter="skill">SKILLS</button>
+            <button class="palette-btn" data-filter="project">PROJECTS</button>
+            <button class="palette-btn" data-filter="education">BACKGROUND</button>
+            <span class="palette-counter" id="counter">7 SCENES · DRAG TO REORDER</span>
+        </footer>
+    </div>
 
     {% include scripts.html %}
 </body>
