@@ -167,11 +167,17 @@ button {
 }
 
 .label {
-  font-size: 10px;
+  font-size: 12px;
+  font-family: "Archivo Black", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-weight: 600;
-  color: var(--coral);
+  color: var(--ink);
+  background: var(--yellow);
+  border: 2px solid var(--line);
+  padding: 4px 10px;
+  box-shadow: 3px 3px 0 var(--line);
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
 .info-name {
