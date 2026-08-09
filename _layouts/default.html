@@ -2,25 +2,51 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<html lang="en">
 {% include head.html %}
 
 <body>
-    <div class="wrapper">
+    <div class="shell">
         {% include sidebar.html %}
         
-        <div class="main-wrapper">
-           
-           {{content}}
-            
-        </div><!--//main-body-->
-    </div>
- 
-{% include footer.html %}
- 
-{% include scripts.html %}
-</body>
-</html> 
+        <main>
+            <header class="top-bar">
+                <div class="crumb">
+                    <span class="crumb-dot"></span>
+                    Curriculum Vitae · {% if site.name %}{{site.name}}{% else %}Kristof Stroobants{% endif %}
+                </div>
+                <div class="top-actions">
+                    <button class="btn-pill" id="btn-copy-email" onclick="copyEmail('{% if site.email %}{{site.email}}{% else %}kristofstroobants@gmail.com{% endif %}')">
+                        <i class="fa fa-envelope"></i> Copy Email
+                    </button>
+                    <button class="btn-pill btn-primary" onclick="window.print()">
+                        <i class="fa fa-print"></i> Print / PDF
+                    </button>
+                </div>
+            </header>
 
+            <article class="sheet">
+                <div class="kicker">CURRICULUM VITAE · {% if site.tagline %}{{site.tagline}}{% else %}WINDOWS SYSTEM ADMINISTRATOR{% endif %}</div>
+                <h1 class="sheet-title">{% if site.name %}{{site.name}}{% else %}Kristof Stroobants{% endif %}</h1>
+                <div class="sheet-tagline">Infrastructure Engineer & System Administrator specializing in PowerShell automation and self-service solutions.</div>
+                
+                <div class="meta-pills">
+                    <span class="meta-pill"><i class="fa fa-map-marker"></i> Schaarbeek / Leuven, Belgium</span>
+                    <span class="meta-pill"><i class="fa fa-terminal"></i> PowerShell & Automation</span>
+                    <span class="meta-pill"><i class="fa fa-envelope"></i> {{site.email}}</span>
+                </div>
+
+                <div class="stack" id="stack">
+                    {{content}}
+                </div>
+
+                {% include footer.html %}
+            </article>
+        </main>
+    </div>
+
+    <div class="toast" id="toast">Copied email address!</div>
+
+    {% include scripts.html %}
+</body>
+</html>
