@@ -220,10 +220,21 @@ button {
 
 .info-bio {
   font-size: 12px;
+.info-bio {
+  font-size: 13px;
   line-height: 1.7;
-  border-top: 2px dashed var(--line);
-  padding-top: 20px;
-  margin-top: 10px;
+  border: 2px solid var(--line);
+  background: var(--card-bg);
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+.info-bio strong {
+  font-weight: 600;
+  background: var(--yellow);
+  padding: 1px 4px;
+  border: 1px solid var(--line);
 }
 
 .info-contacts {
