@@ -2,25 +2,58 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<html lang="en">
 {% include head.html %}
 
 <body>
-    <div class="wrapper">
-        {% include sidebar.html %}
-        
-        <div class="main-wrapper">
-           
-           {{content}}
-            
-        </div><!--//main-body-->
-    </div>
- 
-{% include footer.html %}
- 
-{% include scripts.html %}
-</body>
-</html> 
+    <div class="app">
+        <header class="top">
+            <div class="brand">
+                {% if site.name %}{{site.name}}{% else %}KRISTOF STROOBANTS{% endif %}
+                <span class="brand-badge">CV / 2026</span>
+            </div>
+            <nav class="nav-steps">
+                <a href="#summary" class="nav-step active">01 PROFILE</a>
+                <a href="#experience" class="nav-step">02 EXPERIENCE</a>
+                <a href="#skills" class="nav-step">03 SKILLS</a>
+                <a href="#projects" class="nav-step">04 PROJECTS</a>
+                <a href="#education" class="nav-step">05 BACKGROUND</a>
+            </nav>
+            <button class="top-btn" onclick="window.print()">
+                PRINT / SAVE PDF ↗
+            </button>
+        </header>
 
+        <main class="work">
+            {% include sidebar.html %}
+
+            <section class="canvas">
+                <div class="canvas-header">
+                    <h1>EXPLORE THE CAREER STORYBOARD</h1>
+                    <p class="canvas-sub">Visual contact sheet of engineering milestones &amp; technical projects. Click any scene card to enlarge details, or drag cards to reorder your view.</p>
+                </div>
+
+                <div class="frames-container" id="frames">
+                    {{content}}
+                </div>
+            </section>
+        </main>
+
+        <footer class="palette">
+            <strong>FILTER SCENES:</strong>
+            <button class="palette-btn active" data-filter="all">⚡ ALL SCENES</button>
+            <button class="palette-btn" data-filter="summary">PROFILE</button>
+            <button class="palette-btn" data-filter="experience">EXPERIENCE</button>
+            <button class="palette-btn" data-filter="skill">SKILLS</button>
+            <button class="palette-btn" data-filter="project">PROJECTS</button>
+            <button class="palette-btn" data-filter="education">BACKGROUND</button>
+            <span class="palette-counter" id="counter">6 SCENES · CLICK TO ENLARGE</span>
+        </footer>
+    </div>
+
+    <!-- Backdrop Overlay for Enlarged Cards -->
+    <div class="backdrop-overlay" id="backdrop"></div>
+
+    {% include scripts.html %}
+</body>
+</html>
