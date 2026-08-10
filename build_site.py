@@ -23,8 +23,8 @@ def process_includes(text):
 def process_liquid(text, page_url=""):
     text = process_includes(text)
     # site variables
-    text = text.replace("{{site.baseurl}}", "")
-    text = text.replace("{{ site.baseurl }}", "")
+    text = text.replace("{{site.baseurl}}", "/online-cv")
+    text = text.replace("{{ site.baseurl }}", "/online-cv")
     text = text.replace("{{site.name}}", "Kristof Stroobants")
     text = text.replace("{{ site.name }}", "Kristof Stroobants")
     text = text.replace("{{site.title}}", "Curriculum Vitae")
