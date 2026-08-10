@@ -1,6 +1,6 @@
 title: Curriculum Vitae
 url: 'https://kristofstroobants.github.io/cv'
-baseurl: "" # set baseurl to empty for direct asset resolution
+baseurl: '/online-cv' # repository name for GitHub Pages
 
 
 # Enable one of these styles by removing #. Style will be applied only after restarting the build or serve.
