@@ -3,12 +3,14 @@
 :root {
   --ink: #171814;
   --cream: #f3efdf;
-  --yellow: #f6c945;
-  --blue: #8eb7c7;
-  --coral: #e66f51;
-  --green: #89b399;
-  --line: #2a2b25;
-  --card-bg: #fffaf0;
+  --yellow: #ffe600;
+  --blue: #00f0ff;
+  --pink: #ff007a;
+  --coral: #ff5722;
+  --green: #00ff66;
+  --purple: #b55fe6;
+  --line: #171814;
+  --card-bg: #ffffff;
   --shadow: 6px 6px 0 var(--ink);
   --shadow-lg: 10px 10px 0 var(--ink);
 }
@@ -171,11 +173,11 @@ button {
   font-family: "Archivo Black", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--ink);
-  background: var(--yellow);
-  border: 2px solid var(--line);
-  padding: 4px 10px;
-  box-shadow: 3px 3px 0 var(--line);
+  color: #ffffff;
+  background: var(--purple);
+  border: 2.5px solid var(--line);
+  padding: 5px 12px;
+  box-shadow: 3.5px 3.5px 0 var(--line);
   display: inline-block;
   margin-bottom: 4px;
 }
@@ -212,21 +214,47 @@ button {
 }
 
 .info-bio {
-  font-size: 13px;
-  line-height: 1.7;
-  border: 2px solid var(--line);
-  background: #fffdf5;
-  padding: 16px;
-  margin-top: 16px;
-  box-shadow: 3px 3px 0 var(--line);
+  font-size: 12.5px;
+  line-height: 1.6;
+  border: 3px solid var(--line);
+  background: #ffffff;
+  padding: 18px;
+  margin-top: 18px;
+  box-shadow: 4px 4px 0 var(--line);
   color: var(--ink);
 }
 
+.bio-intro {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed var(--line);
+  line-height: 1.65;
+}
+
+.bio-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.bio-bullet {
+  color: var(--coral);
+  font-size: 9px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
 .info-bio strong {
-  font-weight: 600;
-  background: var(--yellow);
-  padding: 1px 5px;
-  border: 1px solid var(--line);
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .info-contacts {
@@ -240,18 +268,53 @@ button {
 .contact-chip {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border: 2px solid var(--line);
-  background: var(--card-bg);
-  box-shadow: 3px 3px 0 var(--line);
+  gap: 12px;
+  padding: 8px 12px;
+  border: 2.5px solid var(--line);
+  background: #ffffff;
+  box-shadow: 3.5px 3.5px 0 var(--line);
   text-decoration: none;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 11.5px;
+  font-weight: 600;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .contact-chip:hover {
-  background: var(--yellow);
+  background: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--line);
+}
+
+.contact-chip i {
+  font-size: 16px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--line);
+  box-shadow: 2px 2px 0 var(--line);
+  flex-shrink: 0;
+}
+
+.contact-chip .fa-envelope {
+  background: var(--pink);
+  color: #ffffff;
+}
+
+.contact-chip .fa-globe {
+  background: var(--blue);
+  color: var(--ink);
+}
+
+.contact-chip .fa-linkedin {
+  background: var(--purple);
+  color: #ffffff;
+}
+
+.contact-chip .fa-github {
+  background: var(--green);
+  color: var(--ink);
 }
 
 /* Right Canvas Area */
@@ -282,22 +345,24 @@ button {
   color: #555;
 }
 
-/* Frames Grid & Cards Track */
+/* Frames Grid & Cards Track (Vertical Stack Layout) */
 .frames-container {
   display: flex;
-  gap: 24px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 28px;
+  align-items: stretch;
+  max-width: 920px;
   min-height: 480px;
-  padding-bottom: 24px;
+  padding-bottom: 32px;
 }
 
 .frame {
-  width: 320px;
-  min-width: 320px;
+  width: 100%;
+  min-width: 100%;
   border: 3px solid var(--line);
   background: var(--card-bg);
   box-shadow: var(--shadow);
-  padding: 18px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   transform: rotate(var(--r, 0deg));
@@ -307,7 +372,7 @@ button {
 }
 
 .frame:hover {
-  transform: rotate(0deg) translateY(-10px) scale(1.02);
+  transform: rotate(0deg) translateY(-6px) scale(1.005);
   box-shadow: var(--shadow-lg);
   border-color: var(--ink);
   z-index: 10;
@@ -406,8 +471,9 @@ button {
 
 .frame-body ul li {
   position: relative;
-  padding-left: 14px;
-  margin-bottom: 6px;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
 
 .frame-body ul li::before {
@@ -417,6 +483,11 @@ button {
   left: 0;
   top: 2px;
   color: var(--coral);
+}
+
+.frame-body ul li strong {
+  font-weight: 700;
+  color: var(--ink);
 }
 
 /* Scrollable Project List Styling */
