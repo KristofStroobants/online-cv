@@ -9,7 +9,7 @@ layout: compress
     <div class="app">
         <header class="top">
             <div class="brand">
-                <a href="{{site.baseurl}}/" style="text-decoration:none; color:inherit;">{% if site.name %}{{site.name}}{% else %}KRISTOF STROOBANTS{% endif %}</a>
+                <a href="{{site.baseurl}}/" style="text-decoration:none; color:inherit;">Kristof Stroobants</a>
                 <span class="brand-badge">CV / 2026</span>
             </div>
             <nav class="nav-steps">
@@ -26,14 +26,6 @@ layout: compress
             {% include sidebar.html %}
 
             <section class="canvas">
-                {% if page.url contains 'projects' %}
-                {% else %}
-                    <div class="canvas-header">
-                        <h1>EXPLORE THE CAREER STORYBOARD</h1>
-                        <p class="canvas-sub">Visual contact sheet of engineering milestones &amp; technical projects. Click any scene card to enlarge details, or drag cards to reorder your view.</p>
-                    </div>
-                {% endif %}
-
                 <div class="frames-container" id="frames" style="{% if page.url contains 'projects' %}display: block; min-height: auto;{% endif %}">
                     {{content}}
                 </div>
@@ -45,7 +37,7 @@ layout: compress
             <a href="{{site.baseurl}}/#experience" class="palette-btn">EXPERIENCE</a>
             <a href="{{site.baseurl}}/#skills" class="palette-btn">SKILLS</a>
             <a href="{{site.baseurl}}/projects.html" class="palette-btn {% if page.url contains 'projects' %}active{% endif %}" style="text-decoration:none;">⚡ ALL PROJECTS ↗</a>
-            <span class="palette-counter" id="counter">CAREER STORYBOARD</span>
+            <span class="palette-counter" id="counter">ENGINEERING PORTFOLIO</span>
         </footer>
     </div>
 
